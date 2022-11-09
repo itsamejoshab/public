@@ -181,9 +181,9 @@ df['__logit'] = (
                                 -0.1 * df['temp_120_day_balance'] + \
                                  
                                  
-                                 # linear effects
+                                 # linear effects - optional
                                  0 +
-                                 # weird interactions
+                                 # weird interactions - I use a script to randomly generate these
                                  -0.042 *(df['temp_60_day_balance'] * df['temp_months_since_account_begin']) + 0.02 *(df['temp_estimated_annual_income'] * np.sin(df['temp_underground_drop_ind'])) + 0.073 *(np.exp(df['temp_estimated_annual_income']) * np.cos(df['temp_home_own_rent'])) + -0.05 *(df['temp_months_since_account_begin'] * np.sin(df['temp_60_day_balance'])) + 0.022 *(np.sin(df['temp_months_since_account_begin']) * np.sin(df['temp_times_called_in_last_month']))
                               ) * (df.temp_division * df.temp_state * df.temp_product * df.temp_marketing_segment * df.temp_delinquency_status)
                           ) 
